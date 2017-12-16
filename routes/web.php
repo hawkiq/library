@@ -19,8 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route:group(['prefix'=>'admin','middleware'=>'role','roles'=>'admins'],function(){
-    Route::get('/admin',function(){
-        return 'Admin';
-    })->name('admin');
+Route::group(['prefix'=>'admin','middleware'=>'roles','roles'=>'admins'],function(){
+    Route::resource('users','AdminUsersController');
+    Route::resource('categories','AdminCategoryController');
 });
+
+

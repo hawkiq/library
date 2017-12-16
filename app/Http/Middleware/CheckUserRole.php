@@ -23,6 +23,6 @@ class CheckUserRole
         if ($request->user()->hasAnyRole($roles) || !$roles){
             return $next($request);
         }
-       abort(403,'Not Authorozed');
+       abort(403,'Not Authorized');
     }
 }
