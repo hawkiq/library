@@ -18,6 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->string('author');
             $table->string('image');
+            $table->string('bookfile');
             $table->text('info');
             $table->integer('user_id');
             $table->integer('category_id');

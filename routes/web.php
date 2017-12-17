@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/upload',['uses'=>'UploadController@index','middleware'=>'roles','roles'=>['admins','users']])->name('upload');
+Route::post('/upload',['uses'=>'UploadController@upload','middleware'=>'roles','roles'=>['admins','users']])->name('upload.save');
+
 Route::group(['prefix'=>'admin','middleware'=>'roles','roles'=>'admins'],function(){
     Route::resource('users','AdminUsersController');
     Route::resource('categories','AdminCategoryController');

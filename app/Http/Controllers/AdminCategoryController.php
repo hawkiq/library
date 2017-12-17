@@ -25,7 +25,7 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.createcategory');
     }
 
     /**
@@ -36,7 +36,13 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name'=>'required'
+        ]);
+        $category = new Category();
+        $category->name = $request->input('name');
+        $category->save();
+        return redirect(route('categories.index'))->with('msg','Category Added');
     }
 
     /**
