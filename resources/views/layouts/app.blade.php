@@ -81,14 +81,7 @@
                 </div>
                 <!-- /.col-md-9 -->
                 <div class="col-md-3 text-center">
-
-                    @if (count($allcategories) > 0)
-                        <ul class="nav">
-                        @foreach($allcategories as $category)
-                            <li><a href="{{route('category',$category->id)}}">{{$category->name}}</a> </li>
-                            @endforeach
-                        </ul>
-                        @endif
+                   @include('layouts.categories')
                 </div>
                 <!-- /.col-md-3 -->
             </div>

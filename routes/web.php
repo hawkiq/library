@@ -14,6 +14,9 @@
 Route::get('/','PagesController@index')->name('index');
 
 Route::get('/category/{id}','PagesController@viewCategory')->name('category');
+Route::get('/book/{id}','PagesController@viewBook')->name('book');
+
+Route::post('comment/{id}',['uses'=>'PagesController@addComment','middleware'=>'auth'])->name('comment');
 
 Auth::routes();
 

@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="panel panel-default">
-        <div class="panel-heading">{{$category->name}}</div>
+        <div class="panel-heading text-center">{{$category->name}}</div>
 
         <div class="panel-body">
             @if (count($books) > 0)
@@ -19,6 +19,7 @@
                             <br/>
                             Author : {{$book->author}} <br/>
                             <a href="{{asset('storage/books/'.$book->bookfile)}}" class="btn btn-primary">Download</a>
+                            <a href="{{route('book',$book->id)}}" class="btn btn-info">More info</a>
                         </div>
                         <!-- /.col-md-9 -->
                     </div>
