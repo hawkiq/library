@@ -3,10 +3,9 @@
 @section('content')
 
     <div class="panel panel-default">
-        <div class="panel-heading text-center">All Books</div>
+        <div class="panel-heading">{{$category->name}}</div>
 
         <div class="panel-body">
-            {{$books->links()}}
             @if (count($books) > 0)
                 @foreach($books as $book)
                     <div class="row">
@@ -24,8 +23,8 @@
                         <!-- /.col-md-9 -->
                     </div>
                     <hr>
-                @endforeach
-            @endif
+                    @endforeach
+                @endif
         </div>
     </div>
 

@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Auth;
 class UploadController extends Controller
 {
    public function index(){
-       $categories = Category::all();
-       return view('upload')->with('categories',$categories);
+       //$categories = Category::all();
+       return view('upload');
    }
     public function upload(Request $request){
         $this->validate($request,[

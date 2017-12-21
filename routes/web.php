@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','PagesController@index')->name('index');
+
+Route::get('/category/{id}','PagesController@viewCategory')->name('category');
 
 Auth::routes();
 

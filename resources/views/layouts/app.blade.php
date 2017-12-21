@@ -74,7 +74,29 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9">
+                    @yield('content')
+                </div>
+                <!-- /.col-md-9 -->
+                <div class="col-md-3 text-center">
+
+                    @if (count($allcategories) > 0)
+                        <ul class="nav">
+                        @foreach($allcategories as $category)
+                            <li><a href="{{route('category',$category->id)}}">{{$category->name}}</a> </li>
+                            @endforeach
+                        </ul>
+                        @endif
+                </div>
+                <!-- /.col-md-3 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+
+
     </div>
 
     <!-- Scripts -->
